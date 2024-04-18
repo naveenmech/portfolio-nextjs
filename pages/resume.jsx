@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { IoMdAttach } from "react-icons/io";
 
 const resume = () => {
   return (
@@ -17,7 +18,20 @@ const resume = () => {
       <div className="max-w-[940px] mx-auto p-2 pt-[120px]">
         <h2 className="text-center">Resume</h2>
         <div className="bg-[#d0d4d6] my-4 p-4 w-full flex justify-between items-center">
-          <h2 className="text-center">Naveenkumar A</h2>
+          <h2 className="text-center flex gap-[25rem]">
+            Naveenkumar A
+            <button
+              className="border-[1px] hidden md:flex text-sm p-2 bg-red-500  hover:bg-white hover:border-gray-300 hover:shadow-lg  rounded-md transition delay-150 duration-300   items-center gap-1 text-white"
+              onClick={() => {
+                downloadPdf(PDF_FILE_URL);
+              }}
+            >
+              Resume PDF
+              <span className="text-center">
+                <IoMdAttach />
+              </span>
+            </button>
+          </h2>
           <div className="flex">
             <a
               href="https://www.linkedin.com/in/naveenkumar-a-b0b172278/"
