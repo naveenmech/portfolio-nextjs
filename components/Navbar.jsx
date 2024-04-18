@@ -1,13 +1,18 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-// import { useRouter } from 'next/router';
+// import { usePathname } from "next/navigation";
+// import { useRouter } from "next/router";
 import NavLogo from "../public/assets/navLogo.png";
 
 const Navbar = () => {
+  // const { asPath } = useRouter();
+  // console.log(useRouter(asPath));
+
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
   const [navBg, setNavBg] = useState("#ecf0f3");
@@ -68,6 +73,14 @@ const Navbar = () => {
         </Link>
         <div>
           <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
+            {/* <ul
+            style={{ color: `${linkColor}` }}
+            className={`hidden md:flex${
+              asPath === "/"
+                ? "text-green-500 hidden md:flex"
+                : "text-red-500 hidden md:flex"
+            }`} */}
+
             <li className="ml-10 text-sm uppercase hover:border-b">
               <Link href="/">Home</Link>
             </li>
@@ -117,12 +130,12 @@ const Navbar = () => {
             <div className="flex w-full items-center justify-between">
               <Link href="/">
                 <a>
-                  <Image src={NavLogo} width="87" height="35" alt="/" />
+                  <Image src={NavLogo} width="100" height="100" alt="/" />
                 </a>
               </Link>
               <div
                 onClick={handleNav}
-                className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer"
+                className="rounded-full shadow-lg shadow-gray-400 p-3 -mt-5 cursor-pointer"
               >
                 <AiOutlineClose />
               </div>
@@ -172,7 +185,7 @@ const Navbar = () => {
               </p>
               <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
                 <a
-                  href="https://www.linkedin.com/in/clint-briley-50056920a/"
+                  href="https://www.linkedin.com/in/naveenkumar-a-b0b172278/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -181,7 +194,7 @@ const Navbar = () => {
                   </div>
                 </a>
                 <a
-                  href="https://github.com/fireclint"
+                  href="https://github.com/naveenmech"
                   target="_blank"
                   rel="noreferrer"
                 >
